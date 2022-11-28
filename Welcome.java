@@ -11,6 +11,8 @@ import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;    
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
+
 
 /**
  * Extends the JPanel class
@@ -23,14 +25,18 @@ public class Welcome extends JPanel
     private JButton             cmdParent;
     private JButton             cmdAdmin;
     private JPanel              pnlCommand1;
+    private JPanel              pnlDisplay;
     
     /**Constructor
      * 
      */
     public Welcome() 
     {
+        super(new GridLayout(2,1));
+        setPreferredSize(new Dimension(700,500));
         pnlCommand1 = new JPanel();
-        pnlCommand1.setSize(new Dimension(500,200));
+        pnlDisplay = new JPanel();
+        pnlCommand1.setSize(new Dimension(500,500));
 
         cmdParent = new JButton("Parent");
         cmdAdmin = new JButton("Admin Staff");
@@ -41,16 +47,15 @@ public class Welcome extends JPanel
         cmdParent.setBackground(Color.CYAN);
         cmdAdmin.setBackground(Color.CYAN);
 
-        pnlCommand1.add(new JLabel("WHO ARE YOU?"),BorderLayout.EAST);
+        pnlDisplay.add(new JLabel("WELCOME TO STEP-BY-STEP SYSTEM"),BorderLayout.CENTER);
+        pnlCommand1.add(new JLabel("Select User:"),BorderLayout.EAST);
         pnlCommand1.add(cmdParent,BorderLayout.CENTER );
         pnlCommand1.add(cmdAdmin,BorderLayout.WEST);
- 
+        
+        add(pnlDisplay);
         add(pnlCommand1);
-
     }
-
-    
-   
+  
     private static void ShowGUI() 
     {
         //Create and set up the window.

@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.BorderLayout;
+import java.awt.GridLayout;
 import java.awt.Color;
 
 
@@ -22,6 +23,7 @@ public class ParentOptions extends JFrame
     private JButton     cmdRegSt;
     private JButton     cmdViewStReport;       
     private JPanel      pnlCommand;
+    private JPanel      pnlDisplay;
 
     /**Constructor
      * 
@@ -30,7 +32,13 @@ public class ParentOptions extends JFrame
   
     public ParentOptions()
     {
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new GridLayout(2,1));
+        setTitle("Parents Options");
+        setPreferredSize(new Dimension(700,200));
+
         pnlCommand = new JPanel();
+        pnlDisplay = new JPanel();
         pnlCommand.setSize(new Dimension(500,200));
 
         cmdRegSt = new JButton("Register New Student");
@@ -42,11 +50,14 @@ public class ParentOptions extends JFrame
         cmdRegSt.setBackground(Color.CYAN);
         cmdViewStReport.setBackground(Color.CYAN);
 
-        pnlCommand.add(new JLabel("WHO ARE YOU?"),BorderLayout.EAST);
+        pnlDisplay.add(new JLabel("PARENTS MENU"),BorderLayout.CENTER);
+        pnlCommand.add(new JLabel("Select Option:"),BorderLayout.EAST);
         pnlCommand.add(cmdRegSt,BorderLayout.CENTER );
         pnlCommand.add(cmdViewStReport,BorderLayout.WEST);
- 
+        
+        add(pnlDisplay); 
         add(pnlCommand);
+
         pack();
         setVisible(true);
     }
@@ -73,4 +84,15 @@ public class ParentOptions extends JFrame
         }   
     }
 
-}
+
+
+public static void main(String[] args) 
+    {
+        //Schedule a job for the event-dispatching thread:
+        //creating and showing this application's GUI.
+        
+            
+                new ParentOptions();
+            
+        }  
+    }     
