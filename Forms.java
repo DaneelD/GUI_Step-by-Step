@@ -38,9 +38,10 @@ public class Forms extends JPanel
 
     public Forms() 
     {
-        super(new GridLayout(5,0));
+        super(new GridLayout(3,1));
         pnlCommand1 = new JPanel();
         pnlCommand2= new JPanel();
+        pnlComman1.setLayout(new GridLayout(3,1));
 
         cmdGeneral = new JButton("General Application Form");
         cmdEmergenctContact  = new JButton("Emergency Contact Form");

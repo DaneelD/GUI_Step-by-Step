@@ -33,7 +33,7 @@ public class Welcome extends JPanel
     public Welcome() 
     {
         super(new GridLayout(2,1));
-        setPreferredSize(new Dimension(700,500));
+        
         pnlCommand1 = new JPanel();
         pnlDisplay = new JPanel();
         pnlCommand1.setSize(new Dimension(500,500));
