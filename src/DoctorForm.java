@@ -1,5 +1,6 @@
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
@@ -21,7 +22,10 @@ public class DoctorForm extends JFrame {
   
     private JTextField txtDName;
     private JTextField txtDContact;
-    private JTextField txtDAddr;
+    private 
+    JTextField txtDAddr;
+
+    public Forms  student;
     
     public DoctorForm(){
 
@@ -78,28 +82,19 @@ public class DoctorForm extends JFrame {
     {
         public void actionPerformed(ActionEvent s)
         {
-            /*try
+            try
             {
-                String name = txtName.getText();
-                String dob = txtDob.getText();
-                Integer age = Integer.parseInt(txtAge.getText());
-                String addr = txtAddr.getText();
+                String name = txtDName.getText();
+                String contact = txtDContact.getText();
+                String addr = txtDAddr.getText();
                 String[] nextLine = name.split(" ");
                 String fname= nextLine[0];
                 String lname= nextLine[1];
-                String[] nextLine2 = dob.split("/");
-                int d = Integer.parseInt(nextLine2[0]);
-                int m = Integer.parseInt(nextLine2[1]);
-                int y = Integer.parseInt(nextLine2[2]);
                 
-                if (cbFemale.isSelected())
-                    gender = Sex.FEMALE;
-                else gender = Sex.MALE;
-
-                if((nextLine.length == 2)&&(age<10)&&(fname.matches("[a-zA-Z]+"))&&
-                (lname.matches("[a-zA-Z]+"))&& (d>0 && d<32)&&(m>0 && m<13)&&(y>0))
+                if((nextLine.length == 2)&&(fname.matches("[a-zA-Z]+"))&&
+                (lname.matches("[a-zA-Z]+")))
                 {
-                    Student student = new Student(fname, lname, dob, age, addr, gender); //create a student
+                    //save info
                 }
                 else
                     JOptionPane.showMessageDialog(null,"Please input correct info","Invalid Input",JOptionPane.PLAIN_MESSAGE);  //pop up an error window            
@@ -108,13 +103,13 @@ public class DoctorForm extends JFrame {
             {
                 JOptionPane.showMessageDialog(null,"Please input correct info","Invalid Input",JOptionPane.PLAIN_MESSAGE);
             }
-        } */  
-    }}
+        }  
+    }
 
 
-public static void main(String[] args)  
+/*public static void main(String[] args)  
 { 
             new DoctorForm();
-} 
+} */
     
 }
