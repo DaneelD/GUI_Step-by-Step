@@ -1,4 +1,5 @@
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -12,12 +13,17 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.io.File;
 import java.io.IOException;
+import java.awt.BorderLayout;
+
+import javax.swing.AbstractButton;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.table.*;
 import javax.swing.table.DefaultTableModel;
 import java.util.Comparator;
 import java.util.Collections;
 import java.awt.Color;
+import java.awt.Container;
 
 /**
 @author Daneel Downer
@@ -26,56 +32,96 @@ import java.awt.Color;
 
 public class Forms extends JPanel 
 {
-    private JButton     cmdGeneral;
+    private JButton     cmdChild;
+    private JButton     cmdParent;
+    private JButton     cmdDoctor;
     private JButton     cmdEmergenctContact;
     private JButton     cmdDietary;
     private JButton     cmdUpload;
     private JButton     cmdClose;
-    
   
     private JPanel      pnlCommand1;
     private JPanel      pnlCommand2;
+    private JPanel      pnlDisplay1;
+    private JPanel      pnlDisplay2;
+    private JPanel      pnl;
+    private JPanel pnlforms;
+    private JLabel cbChild;
+    private JLabel cbParent;
+    private JLabel cbDoctor;
+    private JLabel cbEmer;
 
     public Forms() 
     {
-        super(new GridLayout(3,1));
+        super(new GridLayout(4,1));
+        
+        pnlforms = new JPanel();
+        pnlforms.setLayout(new GridLayout(7,2));
+
+        pnlforms.add(new JLabel("Child's Personal Form"));
+        cbChild = new JLabel("<not complete>");
+        pnlforms.add(cbChild);
+        pnlforms.add(new JLabel("Parent's Information Form"));
+        cbParent = new JLabel("<not complete>");
+        pnlforms.add(cbParent);
+        pnlforms.add(new JLabel("Doctor's Information Form"));
+        cbDoctor = new JLabel("<not complete>");
+        pnlforms.add(cbDoctor);
+        pnlforms.add(new JLabel("Emergency Contact Form"));
+        cbEmer = new JLabel("<not complete>");
+        pnlforms.add(cbEmer);
+        pnlforms.add(new JLabel("Dietary Form"));
+        JLabel cbDiet = new JLabel("<not complete>");
+        pnlforms.add(cbDiet);
+      
         pnlCommand1 = new JPanel();
         pnlCommand2= new JPanel();
-        pnlComman1.setLayout(new GridLayout(3,1));
+        pnlDisplay1 = new JPanel();
+        pnlDisplay2 = new JPanel();
+        pnl = new JPanel();
+        pnl.setLayout(new BorderLayout());
 
-        cmdGeneral = new JButton("General Application Form");
+        cmdChild = new JButton("Child's Personal Form");
+        cmdParent = new JButton("Parent's Information Form");
+        cmdDoctor = new JButton("Doctor's Information Form");
         cmdEmergenctContact  = new JButton("Emergency Contact Form");
         cmdDietary   = new JButton("Dietary Form");
         cmdUpload   = new JButton("Upload Documents");
         cmdClose = new JButton("Close");
 
-        cmdClose.addActionListener(new CloseButtonListener());
-        cmdGeneral.addActionListener(new GeneralButtonListener());
-        cmdEmergenctContact.addActionListener(new EmergencyContactButtonListener());
-        cmdDietary.addActionListener(new DietaryButtonListener());
-        cmdUpload.addActionListener(new UploadButtonListener());
-        
-        cmdGeneral.setBackground(Color.MAGENTA);
-        cmdClose.setBackground(Color.MAGENTA);
-        cmdEmergenctContact.setBackground(Color.MAGENTA);
-        cmdDietary.setBackground(Color.MAGENTA);
-        cmdUpload.setBackground(Color.MAGENTA);
-
-        //pnlCommand.setBackground(Color.pink);
-        //pnlDisplay.setBackground(Color.GREEN);
-
-        pnlCommand1.add(cmdGeneral);
+        pnlDisplay1.add(new JLabel("Click on forms to fill out. Fill out all forms."));
+        pnlCommand1.add(cmdChild);
+        pnlCommand1.add(cmdParent);
+        pnlCommand1.add(cmdDoctor);
         pnlCommand1.add(cmdEmergenctContact);
         pnlCommand1.add(cmdDietary);
-        pnlCommand2.add(cmdUpload);
+        pnl.add(pnlDisplay1,BorderLayout.NORTH);
+        pnl.add(pnlCommand1,BorderLayout.CENTER);
+
+        pnlDisplay2.add(new JLabel("Click here to upload documents:"));
+        pnlDisplay2.add(cmdUpload);
+
+        cmdClose.addActionListener(new CloseButtonListener());
+        cmdChild.addActionListener(new ChildFormButtonListener());
+        cmdParent.addActionListener(new ParentFormButtonListener());
+        cmdDoctor.addActionListener(new DoctorFormButtonListener());
+        cmdEmergenctContact.addActionListener(new EmergencyContactButtonListener());
+        cmdDietary.addActionListener(new DietaryButtonListener());
+        cmdUpload.addActionListener(new UploadButtonListener()); 
+        
+        cmdClose.setBackground(Color.MAGENTA);
+    
         pnlCommand2.add(cmdClose);
        
-        add(pnlCommand1);
-        //add(pnlCommand2);
+        add(pnlforms);
+        add(pnl);
+        add(pnlDisplay2);
+        add(pnlCommand2);
+
     }
 
 
-    private static void ShowGUI() {
+    public static void ShowGUI() {
         //Create and set up the window.
         JFrame frame = new JFrame("Forms");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -114,11 +160,34 @@ public class Forms extends JPanel
     /**
      * listener class for "General Parent" button
      */
-    private class GeneralButtonListener implements ActionListener
+    private class ChildFormButtonListener implements ActionListener
     {
         public void actionPerformed(ActionEvent ap)
         {
-            new GeneralForm();
+            new ChildForm();
+        }
+    }
+
+    /**
+     * listener class for "General Parent" button
+     */
+    private class ParentFormButtonListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent ap)
+        {
+            new ParentForm();
+        }
+    }
+
+
+    /**
+     * listener class for "General Parent" button
+     */
+    private class DoctorFormButtonListener implements ActionListener
+    {
+        public void actionPerformed(ActionEvent ap)
+        {
+            new DoctorForm();
         }
     }
 
@@ -129,7 +198,7 @@ public class Forms extends JPanel
     {
         public void actionPerformed(ActionEvent ap)
         {
-    
+            new EmergencyContactForm();
         }
     }
 
@@ -151,6 +220,7 @@ public class Forms extends JPanel
     {
         public void actionPerformed(ActionEvent ap)
         {
+            new DietaryForm();
         }
     }
 

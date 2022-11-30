@@ -143,7 +143,7 @@ public class GeneralForm extends JFrame
         pnlParents.setLayout(new BorderLayout(1,2));
         pnlMother.setLayout(new GridLayout(4,2));
         pnlFather.setLayout(new GridLayout(4,2));
-        pnl.setLayout(new GridLayout(2,2,10,10));
+        pnl.setLayout(new GridLayout(2,2));
 
         pnlPTitle.add(new JLabel("PARENT'S INFORMATION"),BorderLayout.NORTH);
         pnlMother.add(new JLabel("Mother's Name")); 

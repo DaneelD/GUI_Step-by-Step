@@ -45,7 +45,7 @@ public class ParentOptions extends JFrame
         cmdViewStReport = new JButton("View Student Record");
         
         cmdRegSt.addActionListener(new RegisterStudentButtonListener()); 
-        cmdViewStReport.addActionListener(new ViewStudentReportButtonListener());
+        cmdViewStReport.addActionListener(new ViewStudentButtonListener());
 
         cmdRegSt.setBackground(Color.CYAN);
         cmdViewStReport.setBackground(Color.CYAN);
@@ -69,14 +69,14 @@ public class ParentOptions extends JFrame
     {
         public void actionPerformed(ActionEvent e)
         {
-            new Forms();
-        }   
+            Forms.ShowGUI();
     }
+}
 
     /**
      * Represent an action listener for the view student report button
      */
-    private class ViewStudentReportButtonListener implements ActionListener
+    private class ViewStudentButtonListener implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
         {
@@ -84,15 +84,4 @@ public class ParentOptions extends JFrame
         }   
     }
 
-
-
-public static void main(String[] args) 
-    {
-        //Schedule a job for the event-dispatching thread:
-        //creating and showing this application's GUI.
-        
-            
-                new ParentOptions();
-            
-        }  
-    }     
+}

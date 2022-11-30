@@ -104,6 +104,7 @@ public class Welcome extends JPanel
         public void actionPerformed(ActionEvent e)
         {
             new ParentOptions();
+            setVisible(false);
         }
     }
 
@@ -115,6 +116,7 @@ public class Welcome extends JPanel
         public void actionPerformed(ActionEvent e)
         {
             new Login();
+            setVisible(false);
         }
     }
 
