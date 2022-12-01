@@ -87,7 +87,7 @@ public class AdminOptions extends JFrame
     {
         public void actionPerformed(ActionEvent e)
         {
-            new Forms();
+            Forms.ShowGUI();
         }   
     }
 
@@ -106,7 +106,7 @@ public class AdminOptions extends JFrame
     {
         public void actionPerformed(ActionEvent e)
         {
-            
+            new SearchStudent();
         }   
     }
 
@@ -114,7 +114,7 @@ public class AdminOptions extends JFrame
     {
         public void actionPerformed(ActionEvent e)
         {
-            
+            new GradeForm();
         }   
     }
 
@@ -126,14 +126,4 @@ public class AdminOptions extends JFrame
         }   
     }
 
-    
-
-
-public static void main(String[] args) 
-    {
-        //Schedule a job for the event-dispatching thread:
-        //creating and showing this application's GUI.
-        
-                new AdminOptions();    
-        }  
-    }     
+s    

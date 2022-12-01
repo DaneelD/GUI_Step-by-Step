@@ -115,7 +115,7 @@ public class Welcome extends JPanel
     {
         public void actionPerformed(ActionEvent e)
         {
-            new Login();
+            new AdminOptions();
             setVisible(false);
         }
     }
