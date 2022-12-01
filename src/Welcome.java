@@ -114,11 +114,7 @@ public class Welcome extends JPanel
     {
         public void actionPerformed(ActionEvent e)
         {
-<<<<<<< Updated upstream
             new AdminOptions();
-=======
-            //new Login();
->>>>>>> Stashed changes
             setVisible(false);
         }
     }
