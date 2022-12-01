@@ -77,7 +77,7 @@ public class AdminOptions extends JFrame
     {
         public void actionPerformed(ActionEvent e)
         {
-            Forms.ShowGUI();
+            new Forms().setVisible(true);
         }   
     }
 
