@@ -3,6 +3,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.BorderLayout;
 import javax.swing.JButton;
@@ -29,15 +30,21 @@ public class Forms extends JPanel
     private JPanel      pnlDisplay2;
     private JPanel      pnl;
     private JPanel      pnlforms;
-    private JLabel      cbChild;
-    private JLabel      cbParent;
-    private JLabel      cbDoctor;
-    private JLabel      cbEmer;
+    public JLabel      cbChild;
+    public JLabel      cbParent;
+    public JLabel      cbDoctor;
+    public JLabel      cbEmer;
 
+
+    private Forms   thisForm;
+    
+    private ArrayList<Student>  studlist;
+
+>>>>>>> Stashed changes
     public Forms() 
     {
         super(new GridLayout(4,1));
-        
+        thisForm = this;
         pnlforms = new JPanel();
         pnlforms.setLayout(new GridLayout(7,2));
 
@@ -93,7 +100,7 @@ public class Forms extends JPanel
         cmdUpload.addActionListener(new UploadButtonListener()); 
         
         cmdClose.setBackground(Color.MAGENTA);
-    
+        //cmdSave  = new JButton("Save");
         pnlCommand2.add(cmdClose);
        
         add(pnlforms);
@@ -102,6 +109,8 @@ public class Forms extends JPanel
         add(pnlCommand2);
 
     }
+
+
 
 
     public static void ShowGUI() {
@@ -119,19 +128,15 @@ public class Forms extends JPanel
         frame.setVisible(true);
     }
 
-    public void addChildInfo(String name,String addr,String dob, String pob,int age, String gender)
-    {}
+    /** 
+     * Method to add student
+     * @param s represent a student
+     */
+    public void addStudent(Student s)
+    {
+        studlist.add(s);
+    }
 
-    public void addParentInfo(String mName,String mOccupation,String mContact, String mEmail, 
-    String fName,String fOccupation,String fContact, String fEmail)
-    {}
-
-    public void addDoctorInfo(String name, String contact, String addr){}
-
-    public void addEmergencyInfo(String name1, String contact1, String addr1, String relation1,
-        String name2, String contact2, String addr2, String relation2){}
-
-    public void addDietaryInfo(String dietNeeds, String foodAlergies, String foodIntolerance, String relRestric){}
 
     public static void main(String[] args) 
     {
@@ -161,7 +166,7 @@ public class Forms extends JPanel
     {
         public void actionPerformed(ActionEvent ap)
         {
-            new ChildForm();
+            new ChildForm(thisForm);
         }
     }
 

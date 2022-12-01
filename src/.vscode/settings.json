@@ -1,0 +1,16 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "/Users/antoniacurtis/Desktop/poi-bin-5.2.3/poi-5.2.3.jar",
+        "/Users/antoniacurtis/Desktop/poi-bin-5.2.3/poi-examples-5.2.3.jar",
+        "/Users/antoniacurtis/Desktop/poi-bin-5.2.3/poi-excelant-5.2.3.jar",
+        "/Users/antoniacurtis/Desktop/poi-bin-5.2.3/poi-javadoc-5.2.3.jar",
+        "/Users/antoniacurtis/Desktop/poi-bin-5.2.3/poi-ooxml-5.2.3.jar",
+        "/Users/antoniacurtis/Desktop/poi-bin-5.2.3/poi-ooxml-full-5.2.3.jar",
+        "/Users/antoniacurtis/Desktop/poi-bin-5.2.3/poi-ooxml-lite-5.2.3.jar",
+        "/Users/antoniacurtis/Desktop/poi-bin-5.2.3/poi-scratchpad-5.2.3.jar",
+        "/Users/antoniacurtis/Desktop/poi-bin-5.2.3/ooxml-lib/**/*.jar",
+        "/Users/antoniacurtis/Desktop/poi-bin-5.2.3/lib/**/*.jar",
+        "/Users/antoniacurtis/Desktop/poi-bin-5.2.3/auxiliary/**/*.jar"
+    ]
+}

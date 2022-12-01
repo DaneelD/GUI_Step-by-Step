@@ -92,7 +92,7 @@ public class DoctorForm extends JFrame {
                 if((nextLine.length == 2)&&(fname.matches("[a-zA-Z]+"))&&
                 (lname.matches("[a-zA-Z]+")))
                 {
-                    //save info
+                    //student.addDoctorInfo(name, contact,addr);//save info
                 }
                 else
                     JOptionPane.showMessageDialog(null,"Please input correct info","Invalid Input",JOptionPane.PLAIN_MESSAGE);  //pop up an error window            

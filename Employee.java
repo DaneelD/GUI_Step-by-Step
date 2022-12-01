@@ -1,10 +1,13 @@
-//package sbs_app;
-public class Parent extends Person {
-    private String occupation;
+public class Employee extends Person {
+    private EType type;
 
-    public Parent(String name, String dob, Sex sex, String addr, String email, String telNum,String occupation){
+    public Employee(String name, String dob, Sex sex, String addr, String email, String telNum,EType type){
         super(name,dob,sex,addr,email,telNum);
-        this.occupation=occupation;
+        this.type=type;
+    }
+
+    public EType getType(){
+        return type;
     }
 
     public String getName(){
@@ -39,16 +42,7 @@ public class Parent extends Person {
         return telNum;
     }
 
-    public void setTelNum(String new_Telnum){
-        this.telNum=new_Telnum;
+    public void setTelNum(String Tel_num){
+        this.telNum=Tel_num;
     }
-
-    public String getOccupation(){
-        return occupation;
-    }
-
-    public void setOccupation(String new_Occupation){
-        this.occupation=new_Occupation;
-    }
-
 }

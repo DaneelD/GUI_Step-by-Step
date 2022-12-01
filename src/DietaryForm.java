@@ -10,6 +10,7 @@ import java.awt.GridLayout;
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
 
 public class DietaryForm extends JFrame {
     
@@ -24,6 +25,7 @@ public class DietaryForm extends JFrame {
     private JTextField txtFoodIntolerance;
 
     public Forms student;
+    private JTextField txtname;
     
     public DietaryForm(){
         student = new Forms();
@@ -37,6 +39,9 @@ public class DietaryForm extends JFrame {
 
         pnlDietary.setLayout(new GridLayout(4,2));
         
+        pnlDietary.add(new JLabel("Student name"));
+        txtname= new JTextField(40);
+        pnlDietary.add(txtname);
         pnlDietary.add(new JLabel("Special Dietary Needs")); 
         txtDietNeeds= new JTextField(40);
         pnlDietary.add(txtDietNeeds);
@@ -85,10 +90,16 @@ public class DietaryForm extends JFrame {
         {
             try
             {
+                String name;
                 String dietNeeds;
                 String foodAlergies;
                 String foodIntolerance;
                 String religiousRestr;
+
+                if(txtname.getText().isBlank())
+                    name = "";
+                else name = txtDietNeeds.getText();
+
 
                 if(txtDietNeeds.getText().isBlank())
                     dietNeeds = "";
@@ -109,7 +120,7 @@ public class DietaryForm extends JFrame {
                 if((dietNeeds.matches("[a-zA-Z]+"))&&(foodAlergies.matches("[a-zA-Z]+"))
                 && (foodIntolerance.matches("[a-zA-Z]+"))&&(religiousRestr.matches("[a-zA-Z]+")))
                 {
-                    //add info
+                    //student.studlist
                 }
                 else
                     JOptionPane.showMessageDialog(null,"Please input correct info","Invalid Input",JOptionPane.PLAIN_MESSAGE);  //pop up an error window            

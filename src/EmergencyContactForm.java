@@ -150,7 +150,7 @@ public class EmergencyContactForm extends JFrame {
                 (lname.matches("[a-zA-Z]+"))&&(nextLine2.length == 2)&&(fname2.matches("[a-zA-Z]+"))&&
                 (lname2.matches("[a-zA-Z]+"))&&(relation.matches("[a-zA-Z]+"))&&(relation.matches("[a-zA-Z]+")))
                 {
-                    //save emergency contact info
+                    //student.addEmergencyInfo(name, contact,addr, relation, name2, contact2, addr2,relation2);//save emergency contact info
                 }
                 else
                     JOptionPane.showMessageDialog(null,"Please input correct info","Invalid Input",JOptionPane.PLAIN_MESSAGE);  //pop up an error window            
