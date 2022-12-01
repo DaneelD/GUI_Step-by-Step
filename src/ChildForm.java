@@ -125,7 +125,8 @@ public class ChildForm extends JFrame
                 if((nextLine.length == 2)&&(age<10)&&(fname.matches("[a-zA-Z]+"))&&
                 (lname.matches("[a-zA-Z]+"))&& (d>0 && d<32)&&(m>0 && m<13)&&(y>0))
                 {
-                    student.addChildInfo(name, addr, dob, pob, gender, lname);//create a student--todo
+                    //student.addChildInfo(name, addr, dob, pob, gender, lname);//create a student--todo
+                    
                 }
                 else
                     JOptionPane.showMessageDialog(null,"Please input correct info","Invalid Input",JOptionPane.PLAIN_MESSAGE);  //pop up an error window            
