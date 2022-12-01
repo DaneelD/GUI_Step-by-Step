@@ -21,11 +21,8 @@ import java.awt.Color;
 public class AdminOptions extends JFrame
 {     
     private JButton     cmdRegSt;
-    private JButton     cmdViewStReport;
-    private JButton     cmdModifyStudent;
-
-    private JButton     cmdEnterGrades;
-    private JButton     cmdGenerateReport;
+    private JButton     cmdStudent;
+    private JButton     cmdEmployee;
 
     private JPanel      pnlCommand;
     private JPanel      pnlDisplay;
@@ -47,30 +44,22 @@ public class AdminOptions extends JFrame
         pnlCommand.setSize(new Dimension(500,200));
 
         cmdRegSt = new JButton("Register New Student");
-        cmdViewStReport = new JButton("View Student Record");
-        cmdModifyStudent = new JButton("Modify Student Record");
-        cmdEnterGrades= new JButton("Enter Student Grades");
-        cmdGenerateReport = new JButton("Generate Student Report");
+        cmdStudent = new JButton("Student Record");
+        cmdEmployee = new JButton("Employee Record");
         
         cmdRegSt.addActionListener(new RegisterStudentButtonListener()); 
-        cmdViewStReport.addActionListener(new ViewStudentReportButtonListener());
-        cmdModifyStudent.addActionListener(new ModifyStudentReportButtonListener());
-        cmdEnterGrades.addActionListener(new EnterGradesButtonListener());
-        cmdGenerateReport.addActionListener(new GenerateReportButtonListener());
+        cmdStudent.addActionListener(new StudentButtonListener());
+        cmdEmployee.addActionListener(new EmployeeButtonListener());
 
         cmdRegSt.setBackground(Color.CYAN);
-        cmdViewStReport.setBackground(Color.CYAN);
-        cmdModifyStudent.setBackground(Color.CYAN);
-        cmdEnterGrades.setBackground(Color.CYAN);
-        cmdGenerateReport.setBackground(Color.CYAN);
+        cmdStudent.setBackground(Color.CYAN);
+        cmdEmployee.setBackground(Color.CYAN);
 
         pnlDisplay.add(new JLabel("ADMIN MENU"),BorderLayout.CENTER);
         pnlCommand.add(new JLabel("Select Option:"),BorderLayout.EAST);
         pnlCommand.add(cmdRegSt,BorderLayout.EAST );
-        pnlCommand.add(cmdViewStReport,BorderLayout.CENTER);
-        pnlCommand.add(cmdModifyStudent,BorderLayout.WEST);
-        pnlCommand.add(cmdEnterGrades,BorderLayout.EAST);
-        pnlCommand.add(cmdGenerateReport,BorderLayout.WEST);
+        pnlCommand.add(cmdStudent,BorderLayout.CENTER);
+        pnlCommand.add(cmdEmployee,BorderLayout.WEST);
 
         
         add(pnlDisplay); 
@@ -91,39 +80,18 @@ public class AdminOptions extends JFrame
         }   
     }
 
-    /**
-     * Represent an action listener for the view student report button
-     */
-    private class ViewStudentReportButtonListener implements ActionListener
+    private class StudentButtonListener implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
         {
-            
+            new StudentRecord().setVisible(true);
         }   
     }
-
-    private class ModifyStudentReportButtonListener implements ActionListener
+    private class EmployeeButtonListener implements ActionListener
     {
         public void actionPerformed(ActionEvent e)
         {
-            new SearchStudent().setVisible(true);
-        }   
-    }
-
-    private class EnterGradesButtonListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-           new GradeForm().setVisible(true);
-           
-        }   
-    }
-
-    private class GenerateReportButtonListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            
+            new EmployeeForm().setVisible(true);
         }   
     }
 }
