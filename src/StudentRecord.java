@@ -157,7 +157,7 @@ public class StudentRecord extends javax.swing.JFrame {
     }                                          
 
     private void ModifyButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
-       
+        new LikeForm().setVisible(true);
     }                                            
 
     private void GradeButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            

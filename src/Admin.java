@@ -72,7 +72,7 @@ public class Admin extends Employee implements AdminHelp {
             }
         }
 
-        filepath = new File("C:\\Users\\Student\\Documents\\GitHub\\GUI_Step-by-Step\\Data.xls");
+        filepath = new File("/Users/antoniacurtis/Desktop/StepData/Data.xlsx");
         stream = new FileOutputStream(filepath);
         workbook.write(stream);
         stream.close();
@@ -80,8 +80,8 @@ public class Admin extends Employee implements AdminHelp {
     }
 
     public String regStudent(Student student) throws IOException{
-        //String excelFilePath = "C:\\Users\\HP\\OneDrive\\Documents\\OneDrive\\Desktop\\Software Engineering\\Data.xlsx";
-        String excelFilePath = "C:\\Users\\Student\\Documents\\GitHub\\GUI_Step-by-Step\\Data.xls";
+        //String excelFilePath = "/Users/antoniacurtis/Desktop/StepData/Data.xlsx";
+        String excelFilePath = "/Users/antoniacurtis/Desktop/StepData/Data.xlsx";
         FileInputStream inputStream = new FileInputStream(new File(excelFilePath));
         Workbook workbook = WorkbookFactory.create(inputStream);
         Sheet sheet = workbook.getSheetAt(0);
@@ -128,7 +128,7 @@ public class Admin extends Employee implements AdminHelp {
     }
 
     public void enterGEmployee(GeneralEmployee employee) throws EncryptedDocumentException, IOException{
-        String excelFilePath = "C:\\Users\\HP\\OneDrive\\Documents\\OneDrive\\Desktop\\Software Engineering\\Data.xlsx";
+        String excelFilePath = "/Users/antoniacurtis/Desktop/StepData/Data.xlsx";
         FileInputStream inputStream = new FileInputStream(new File(excelFilePath));
         Workbook workbook = WorkbookFactory.create(inputStream);
         Sheet sheet = workbook.getSheetAt(1);

@@ -57,6 +57,7 @@ public class GeneralForm extends JFrame
     private JPanel pnlParents;
     private JPanel pnl;
     private Container pnlD;
+    
     private JPanel pnlTitle;
     private JPanel pnlData;
     private JPanel pnlMother;
