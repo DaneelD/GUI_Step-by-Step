@@ -1,11 +1,8 @@
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.border.Border;
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
+
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 
@@ -14,15 +11,9 @@ import java.awt.GridLayout;
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.awt.Color;
 import java.awt.Component;
 import java.awt.Container;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.BufferedWriter;
 
-import java.util.ArrayList;
 
 /**
  * Extends the JFrame class
@@ -41,13 +32,10 @@ public class GeneralForm extends JFrame
     private JCheckBox cbMale;
 
     private JButton     cmdSave; 
-    private JButton     cmdClose;            
-    private JButton     cmdClearAll;   
+    private JButton     cmdClose;    
 
     private JPanel      pnlCommand;
     private JPanel      pnlPersonal;
-    private JPanel      pnlDisplay2;
-    private JPanel      pnlDisplay3;
     private JPanel      pnlDoctor;
     
 
@@ -61,7 +49,6 @@ public class GeneralForm extends JFrame
     private JTextField txtFOccupation;
     private JTextField txtFContact;
     private JTextField txtFEmail;
-    private JTextField txtDName;
     private JTextField txtDocContact;
     private JTextField txtDocName;
     private JTextField txtDocEmail;
@@ -70,8 +57,6 @@ public class GeneralForm extends JFrame
     private JPanel pnlParents;
     private JPanel pnl;
     private Container pnlD;
-    private JPanel pnlC;
-    private JPanel pnlE;
     private JPanel pnlTitle;
     private JPanel pnlData;
     private JPanel pnlMother;

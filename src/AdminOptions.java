@@ -34,6 +34,7 @@ public class AdminOptions extends JFrame
   
     public AdminOptions()
     {
+
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new GridLayout(2,1));
         setTitle("Admin Options");
@@ -91,7 +92,7 @@ public class AdminOptions extends JFrame
     {
         public void actionPerformed(ActionEvent e)
         {
-            new EmployeeForm().setVisible(true);
+            new EmployeeRecord().setVisible(true);
         }   
     }
 }

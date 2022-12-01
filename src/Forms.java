@@ -1,29 +1,12 @@
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import java.awt.Dimension;
 import java.awt.GridLayout;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import java.util.Scanner;
-import java.util.ArrayList;
-import java.io.File;
-import java.io.IOException;
 import java.awt.BorderLayout;
-
-import javax.swing.AbstractButton;
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.table.*;
-import javax.swing.table.DefaultTableModel;
-import java.util.Comparator;
-import java.util.Collections;
 import java.awt.Color;
-import java.awt.Container;
 
 /**
 @author Daneel Downer
@@ -50,9 +33,6 @@ public class Forms extends JPanel
     private JLabel      cbParent;
     private JLabel      cbDoctor;
     private JLabel      cbEmer;
-
-    private Forms   thisForm;
-    private ArrayList<Student>  studlist;
 
     public Forms() 
     {
