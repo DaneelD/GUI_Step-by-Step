@@ -3,6 +3,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.GridLayout;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import java.awt.BorderLayout;
 import javax.swing.JButton;
@@ -34,8 +35,7 @@ public class Forms extends JPanel
     public JLabel      cbDoctor;
     public JLabel      cbEmer;
 
-<<<<<<< Updated upstream
-=======
+
     private Forms   thisForm;
     
     private ArrayList<Student>  studlist;
