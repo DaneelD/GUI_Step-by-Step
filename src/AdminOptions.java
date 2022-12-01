@@ -106,7 +106,7 @@ public class AdminOptions extends JFrame
     {
         public void actionPerformed(ActionEvent e)
         {
-            new SearchStudent();
+            new SearchStudent().setVisible(true);
         }   
     }
 
@@ -114,7 +114,8 @@ public class AdminOptions extends JFrame
     {
         public void actionPerformed(ActionEvent e)
         {
-            new GradeForm();
+           new GradeForm().setVisible(true);
+           
         }   
     }
 
@@ -126,4 +127,3 @@ public class AdminOptions extends JFrame
         }   
     }
 }
-

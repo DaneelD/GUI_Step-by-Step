@@ -79,7 +79,6 @@ public class Welcome extends JPanel
         frame.pack();    
     }
 
-    
     /** 
      * Main method to execute program
      * @param args

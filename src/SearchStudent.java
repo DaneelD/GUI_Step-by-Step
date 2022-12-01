@@ -10,7 +10,7 @@ public class SearchStudent extends javax.swing.JFrame {
     public SearchStudent() {
         initComponents();
     }
-                         
+                          
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
@@ -117,7 +117,7 @@ public class SearchStudent extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-      try {
+        try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -135,12 +135,12 @@ public class SearchStudent extends javax.swing.JFrame {
         }
         //</editor-fold>
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new SearchStudent().setVisible(true);
-            }
-        });
+        // /* Create and display the form */
+        // java.awt.EventQueue.invokeLater(new Runnable() {
+        //     public void run() {
+        //         new SearchStudent().setVisible(true);
+        //     }
+        // });
     }
 
     // Variables declaration - do not modify                     
