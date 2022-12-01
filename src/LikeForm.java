@@ -1,4 +1,3 @@
-
 /**
  *
  * @author antoniacurtis
@@ -11,7 +10,7 @@ public class LikeForm extends javax.swing.JFrame {
     public LikeForm() {
         initComponents();
     }
-                        
+                         
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
@@ -24,6 +23,7 @@ public class LikeForm extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 18)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 51, 255));
         jLabel1.setText("Child Like and Dislike Form");
 
         jLabel2.setFont(new java.awt.Font("Helvetica Neue", 0, 14)); // NOI18N
@@ -52,6 +52,11 @@ public class LikeForm extends javax.swing.JFrame {
 
         CloseButton.setBackground(new java.awt.Color(204, 0, 0));
         CloseButton.setText("Close");
+        CloseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CloseButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -92,11 +97,14 @@ public class LikeForm extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
+    private void CloseButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        setVisible(false);//close window
+    }                                           
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {

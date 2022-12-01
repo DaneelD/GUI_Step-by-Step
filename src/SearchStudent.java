@@ -1,6 +1,6 @@
 /**
  *
- * @author Group 5
+ * @author antoniacurtis
  */
 public class SearchStudent extends javax.swing.JFrame {
 
@@ -10,7 +10,7 @@ public class SearchStudent extends javax.swing.JFrame {
     public SearchStudent() {
         initComponents();
     }
-                            
+                         
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
@@ -23,21 +23,31 @@ public class SearchStudent extends javax.swing.JFrame {
         SeachLName = new javax.swing.JTextField();
         SearchDOB = new javax.swing.JTextField();
 
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
         jLabel1.setFont(new java.awt.Font("Helvetica Neue", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 51, 255));
         jLabel1.setText("MODIFY OR SEARCH STUDENT RECORD");
 
+        ModifyButton.setBackground(new java.awt.Color(0, 204, 153));
         ModifyButton.setText("MODIFY");
+
+        SearchButton.setBackground(new java.awt.Color(102, 204, 255));
         SearchButton.setText("SEARCH");
+
+        CloseButton.setBackground(new java.awt.Color(204, 0, 0));
         CloseButton.setText("CLOSE");
+        CloseButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CloseButtonActionPerformed(evt);
+            }
+        });
 
         jLabel2.setText("Complete the fields below and select the desired option");
 
         jLabel3.setText("Student Last Name:");
 
         jLabel4.setText("Student Date of Birth:");
-
-        setVisible(true);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -66,9 +76,9 @@ public class SearchStudent extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(ModifyButton)
-                                .addGap(73, 73, 73)
+                                .addGap(82, 82, 82)
                                 .addComponent(SearchButton)
-                                .addGap(92, 92, 92)
+                                .addGap(83, 83, 83)
                                 .addComponent(CloseButton))
                             .addComponent(jLabel1))
                         .addGap(0, 24, Short.MAX_VALUE))))
@@ -95,20 +105,19 @@ public class SearchStudent extends javax.swing.JFrame {
                     .addComponent(CloseButton))
                 .addGap(66, 66, 66))
         );
-        
+
         pack();
     }// </editor-fold>                        
+
+    private void CloseButtonActionPerformed(java.awt.event.ActionEvent evt) {                                            
+        setVisible(false);//close window
+    }                                           
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
+      try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -146,19 +155,3 @@ public class SearchStudent extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     // End of variables declaration                   
 }
-
-// private class CloseButtonListener implements ActionListener
-// {
-//     public void actionPerformed(ActionEvent e)
-//     {
-//         setVisible(false);//close window
-//     }   
-// }
-
-// private class SaveButtonListener implements ActionListener
-//     {
-//         public void actionPerformed(ActionEvent s)
-//         {
-            
-//         }  
-//     }
