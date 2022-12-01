@@ -14,20 +14,31 @@ public class Student extends Person {
     private Integer[] grd_set;
     private Parent parent;
     private Parent parent2;
+    private ArrayList<String> emerContact1;
+    private ArrayList<String> emerContact2;
 
     public Student(String name,String dob, Sex sex,String addr,String d_name,String email,
-    String telNumber,ArrayList<String> dislikes, Grade grades,String pname, String pdob, 
-    Sex psex, String p_addr, String p_email, String ptelNum,String p_emgContact,
-    String p_occupation,String p2name, String p2dob, 
-    Sex p2sex, String p2_addr, String p2_email, String p2telNum,String p2_emgContact
-    ,String p2_occupation){
+    String telNumber,ArrayList<String> dislikes, Parent parent1, Parent parent2,
+    ArrayList<String> emerContact1, ArrayList<String> emerContact2,Grade grades){
         super(name,dob,sex,addr,email,telNumber);
         this.d_name=d_name;
         this.dislikes=dislikes;
         this.gradebook=grades;
-        this.parent=new Parent(pname,pdob,psex,p_addr,p_email,ptelNum,p_emgContact,p_occupation);
-        this.parent2=new Parent(p2name,p2dob,p2sex,p2_addr,p2_email,p2telNum,p2_emgContact,p2_occupation);
+        this.parent= parent1;
+        this.parent2= parent2;
+        this.emerContact1 = emerContact1;
+        this.emerContact2=emerContact2;
     }
+
+    
+    public Student(String name, String dOB, Sex sex, String address, String dName, String dEmail, String dTel,
+            ArrayList<String> dislike, Grade grds, String pname, String pdob, Sex psex, String paddr, String pemail,
+            String ptelNum, String pemg, String poccupation, String p2name, String p2dob, Sex p2sex, String p2addr,
+            String p2email, String p2telNum, String p2emg, String p2occupation)
+            {super(name,dOB,sex,address,dEmail,dTel);
+    }
+
+
 
     public String getpName(){
         return parent.getName();
@@ -65,12 +76,28 @@ public class Student extends Person {
         parent.setTelNum(newtelNum);
     }
 
-    public String getpEmgContact(){
-        return parent.getEmgcon();
+    public ArrayList<String> getEmgContact1(){
+        return emerContact1;
     }
 
-    public void setpEmgContact(String newContact){
-        parent.setEmgcon(newContact);
+    public ArrayList<String> getEmgContact2(){
+        return emerContact2;
+    }
+
+    public void setEmgContact(String name, String contact, String addr, String relation, String name2, String contact2, String addr2, String relation2){
+        emerContact1.add(name);
+        emerContact1.add(contact);
+        emerContact1.add(addr);
+        emerContact1.add(relation);
+        emerContact2.add(name2);
+        emerContact2.add(contact2);
+        emerContact2.add(addr2);
+        emerContact2.add(relation2);
+    }
+
+    public void setParentInfo(String name, String contact, String occp, String email, String name2, String contact2, String occp2, String email2){
+        parent = new Parent(name, "", Sex.FEMALE, "", email, contact, occp);
+        parent2 = new Parent(name, "",Sex.MALE, "",email2,contact2,occp2);   
     }
 
     public String getpOccupation(){
@@ -117,13 +144,13 @@ public class Student extends Person {
         parent2.setTelNum(newtelNum);
     }
 
-    public String getp2EmgContact(){
+    /*public String getp2EmgContact(){
         return parent2.getEmgcon();
     }
 
     public void setp2EmgContact(String newContact){
         parent2.setEmgcon(newContact);
-    }
+    }*/
 
     public String getp2Occupation(){
         return parent2.getOccupation();
@@ -200,4 +227,11 @@ public class Student extends Person {
     public String getDoctorName(){
         return d_name;
     }
+
+    public String toString()
+    {
+        return(getName()+" "+getDOB()+" "+getSex()+" "+getAddr()+" "+getDName()+" "+getEmail()+" "+getTelNum()
+        +" "+getDislikes())+" "+getp2Name()+" "+getpName()+" "+getDName()+" "+getEmgContact1();
+    }
+ 
 }

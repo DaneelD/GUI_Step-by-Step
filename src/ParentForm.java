@@ -131,7 +131,7 @@ public class ParentForm extends JFrame {
                 (m_lname.matches("[a-zA-Z]+"))&&(nextLine2.length == 2)&&(f_fname.matches("[a-zA-Z]+"))&&
                 (f_lname.matches("[a-zA-Z]+"))&&(f_occupation.matches("[a-zA-Z]+"))&&(m_occupation.matches("[a-zA-Z]+")))
                 {
-                    //save parent contact info
+                    //student.addParentInfo(m_name,m_occupation,m_contact, m_email, f_name, f_occupation, f_contact, f_email);//save parent contact info
                 }
                 else
                     JOptionPane.showMessageDialog(null,"Please input correct info","Invalid Input",JOptionPane.PLAIN_MESSAGE);  //pop up an error window            

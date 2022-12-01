@@ -90,10 +90,10 @@ public class Admin extends Employee implements AdminHelp {
             {student.getName(),student.getDOB(),student.getSex(), student.getAddr(), 
             student.getDName(),student.getEmail(),student.getTelNum(),student.getpName(),
             student.getpDOB(),student.getpSex(),student.getpAddr(),student.getpEmail(),
-            student.getpNumber(),student.getpEmgContact(),student.getpOccupation(),
+            student.getpNumber(),student.getpOccupation(),
             student.getp2Name(),student.getp2DOB(),student.getp2Sex(),student.getp2Addr(),
-            student.getp2Email(),student.getp2Number(),student.getp2EmgContact(),
-            student.getp2Occupation()}
+            student.getp2Email(),student.getp2Number(),student.getp2Occupation(),student.getEmgContact1(),student.getEmgContact1(),
+            }
         };
 
         int rowCount = sheet.getLastRowNum();

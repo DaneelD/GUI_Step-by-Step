@@ -9,7 +9,13 @@ import javax.swing.JCheckBox;
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.security.KeyStore.Entry;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.awt.event.ActionEvent;
 import java.awt.Dimension;
 import java.awt.Color;
@@ -31,12 +37,12 @@ public class ChildForm extends JFrame
     private JButton cmdClose;
     private JButton cmdSave;
 
-    public Forms  student;
+    public Forms reg;
     
 
-    public ChildForm(){
+    public ChildForm(Forms student){
 
-        student = new Forms();
+        reg = student;
         setTitle("CHILD'S INFORMATION");
         setLayout(new BorderLayout());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -110,9 +116,10 @@ public class ChildForm extends JFrame
                 String dob = txtDob.getText();
                 String pob = txtPob.getText();
                 Integer age = Integer.parseInt(txtAge.getText());
-                char gender= 'm';
+                
+                Sex gender = Sex.MALE;
                 if (cbFemale.isSelected())
-                    gender='f';
+                    gender=Sex.FEMALE;
                 
                 String[] nextLine = name.split(" ");
                 String fname= nextLine[0];
@@ -125,8 +132,25 @@ public class ChildForm extends JFrame
                 if((nextLine.length == 2)&&(age<10)&&(fname.matches("[a-zA-Z]+"))&&
                 (lname.matches("[a-zA-Z]+"))&& (d>0 && d<32)&&(m>0 && m<13)&&(y>0))
                 {
-                    //student.addChildInfo(name, addr, dob, pob, gender, lname);//create a student--todo
-                    
+                    Parent p = new Parent("","",Sex.FEMALE,"","","","");
+                    Parent p2 = new Parent("","",Sex.MALE,"","","","");
+                    ArrayList<String> emgc1 = new ArrayList<String>();
+                    ArrayList<String> emgc2 = new ArrayList<String>();
+                    ArrayList<String> dislikes = new ArrayList<String>();
+                    HashMap<String, Integer> grades= new HashMap<>();
+                    Grade grade = new Grade(grades);
+                    Student student = new Student(name, dob,gender, addr, "","","",dislikes,p,p2,emgc1,emgc2,grade); 
+                    reg.cbChild.setText("Completed");
+                    //ChildForm.this.reg.addStudent(student); //add student to list
+                    setVisible(false);
+                    try
+                    {
+                        FileWriter file = new FileWriter("StudentDetails.txt", true); //opening the file to print to in append mode
+                        PrintWriter outWriter = new PrintWriter(new BufferedWriter(file));
+                        outWriter.println(student); // writing to the file
+                        outWriter.close();
+                    }
+                    catch(IOException io){}    
                 }
                 else
                     JOptionPane.showMessageDialog(null,"Please input correct info","Invalid Input",JOptionPane.PLAIN_MESSAGE);  //pop up an error window            
