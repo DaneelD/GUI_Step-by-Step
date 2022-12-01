@@ -11,6 +11,8 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
+
+
 public class Admin extends Employee implements AdminHelp {
 
     private Row row;
@@ -92,8 +94,8 @@ public class Admin extends Employee implements AdminHelp {
             student.getpDOB(),student.getpSex(),student.getpAddr(),student.getpEmail(),
             student.getpNumber(),student.getpOccupation(),
             student.getp2Name(),student.getp2DOB(),student.getp2Sex(),student.getp2Addr(),
-            student.getp2Email(),student.getp2Number(),student.getp2Occupation(),student.getEmgContact1(),student.getEmgContact1(),
-            }
+            student.getp2Email(),student.getp2Number(),
+            student.getp2Occupation(),student.getEmgContact1(),student.getEmgContact2()}
         };
 
         int rowCount = sheet.getLastRowNum();
@@ -191,6 +193,8 @@ public class Admin extends Employee implements AdminHelp {
     public void getAEmployeeInfo(){
 
     }
+
+
     
     /*public String getGEmployeeInfo(){
         String st;

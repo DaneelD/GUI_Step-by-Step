@@ -40,7 +40,6 @@ public class Forms extends JPanel
     
     private ArrayList<Student>  studlist;
 
->>>>>>> Stashed changes
     public Forms() 
     {
         super(new GridLayout(4,1));
@@ -51,15 +50,6 @@ public class Forms extends JPanel
         pnlforms.add(new JLabel("Child's Personal Form"));
         cbChild = new JLabel("<not complete>");
         pnlforms.add(cbChild);
-        pnlforms.add(new JLabel("Parent's Information Form"));
-        cbParent = new JLabel("<not complete>");
-        pnlforms.add(cbParent);
-        pnlforms.add(new JLabel("Doctor's Information Form"));
-        cbDoctor = new JLabel("<not complete>");
-        pnlforms.add(cbDoctor);
-        pnlforms.add(new JLabel("Emergency Contact Form"));
-        cbEmer = new JLabel("<not complete>");
-        pnlforms.add(cbEmer);
         pnlforms.add(new JLabel("Dietary Form"));
         JLabel cbDiet = new JLabel("<not complete>");
         pnlforms.add(cbDiet);
@@ -93,11 +83,7 @@ public class Forms extends JPanel
 
         cmdClose.addActionListener(new CloseButtonListener());
         cmdChild.addActionListener(new ChildFormButtonListener());
-        cmdParent.addActionListener(new ParentFormButtonListener());
-        cmdDoctor.addActionListener(new DoctorFormButtonListener());
-        cmdEmergenctContact.addActionListener(new EmergencyContactButtonListener());
-        cmdDietary.addActionListener(new DietaryButtonListener());
-        cmdUpload.addActionListener(new UploadButtonListener()); 
+       
         
         cmdClose.setBackground(Color.MAGENTA);
         //cmdSave  = new JButton("Save");
@@ -156,74 +142,14 @@ public class Forms extends JPanel
         {
             System.exit(0);
         }
-
     }
 
-    /**
-     * listener class for "General Parent" button
-     */
     private class ChildFormButtonListener implements ActionListener
     {
-        public void actionPerformed(ActionEvent ap)
+        public void actionPerformed(ActionEvent e)
         {
-            new ChildForm(thisForm);
+            System.exit(0);
         }
     }
-
-    /**
-     * listener class for "General Parent" button
-     */
-    private class ParentFormButtonListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent ap)
-        {
-            new ParentForm();
-        }
-    }
-
-
-    /**
-     * listener class for "General Parent" button
-     */
-    private class DoctorFormButtonListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent ap)
-        {
-            new DoctorForm();
-        }
-    }
-
-    /**
-     * listener class for "Emergency Contact Form" button
-     */
-    private class EmergencyContactButtonListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent ap)
-        {
-            new EmergencyContactForm();
-        }
-    }
-
-    /**
-     * listener class for "Upload Documents" button
-     */
-    private class UploadButtonListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent ap)
-        {
-           
-        }
-    }
-
-    /**
-     * listener class for "Dietary Form" button
-     */
-    private class DietaryButtonListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent ap)
-        {
-            new DietaryForm();
-        }
-    }
-
 }
+
