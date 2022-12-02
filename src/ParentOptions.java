@@ -20,8 +20,7 @@ import java.awt.Color;
 
 public class ParentOptions extends JFrame
 {     
-    private JButton     cmdRegSt;
-    private JButton     cmdViewStReport;       
+    private JButton     cmdRegSt;      
     private JPanel      pnlCommand;
     private JPanel      pnlDisplay;
 
@@ -42,18 +41,12 @@ public class ParentOptions extends JFrame
         pnlCommand.setSize(new Dimension(500,200));
 
         cmdRegSt = new JButton("Register New Student");
-        cmdViewStReport = new JButton("View Student Record");
-        
         cmdRegSt.addActionListener(new RegisterStudentButtonListener()); 
-        cmdViewStReport.addActionListener(new ViewStudentButtonListener());
-
         cmdRegSt.setBackground(Color.CYAN);
-        cmdViewStReport.setBackground(Color.CYAN);
 
         pnlDisplay.add(new JLabel("PARENTS MENU"),BorderLayout.CENTER);
         pnlCommand.add(new JLabel("Select Option:"),BorderLayout.EAST);
         pnlCommand.add(cmdRegSt,BorderLayout.CENTER );
-        pnlCommand.add(cmdViewStReport,BorderLayout.WEST);
         
         add(pnlDisplay); 
         add(pnlCommand);
@@ -69,19 +62,8 @@ public class ParentOptions extends JFrame
     {
         public void actionPerformed(ActionEvent e)
         {
-            Forms.ShowGUI();
+            new Forms().setVisible(true);
     }
-}
-
-    /**
-     * Represent an action listener for the view student report button
-     */
-    private class ViewStudentButtonListener implements ActionListener
-    {
-        public void actionPerformed(ActionEvent e)
-        {
-            
-        }   
     }
 
 }

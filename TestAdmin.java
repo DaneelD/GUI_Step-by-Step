@@ -131,7 +131,7 @@ public class TestAdmin {
         "dd-mm-yyy", Sex.MALE, "Ocho Rios Street", "craig.nelson@outlook.com",
         "876 266 7862",EType.GENERAL);
 
-        String excelFilePath = "/Users/antoniacurtis/Desktop/StepData/Data.xlsx";
+        String excelFilePath = "C://Users//Student//Documents//GitHub//GUI_Step-by-Step//Mean.xlsx";
         if(new File(excelFilePath).exists()){
             /*admin.enterGEmployee(employee1);
             admin.enterAEmployee(admin);

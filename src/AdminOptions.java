@@ -1,3 +1,4 @@
+
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -77,8 +78,8 @@ public class AdminOptions extends JFrame
     {
         public void actionPerformed(ActionEvent e)
         {
-            Forms.ShowGUI();
-        }   
+            new Forms().setVisible(true);
+        }    
     }
 
     private class StudentButtonListener implements ActionListener
