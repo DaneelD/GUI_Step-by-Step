@@ -14,143 +14,223 @@ public class Student extends Person {
     private Integer[] grd_set;
     private Parent parent;
     private Parent parent2;
-    private ArrayList<String> emerContact1;
-    private ArrayList<String> emerContact2;
 
+     /**
+     * 
+     * @param name Name of student
+     * @param dob Date of birth of student
+     * @param sex Gender of student
+     * @param addr Address of student
+     * @param d_name 
+     * @param email Email 
+     * @param telNumber Telephone number
+     * @param dislikes Dislikes of student
+     * @param parent1 Parent of student
+     * @param parent2 Parent of student
+     * @param emerContact1 Emergency contact
+     * @param emerContact2 Emergency contact 
+     * @param grades Grades of student
+     */
     public Student(String name,String dob, Sex sex,String addr,String d_name,String email,
-    String telNumber,ArrayList<String> dislikes, Parent parent1, Parent parent2,
-    ArrayList<String> emerContact1, ArrayList<String> emerContact2,Grade grades){
+    String telNumber,ArrayList<String> dislikes, Grade grades,String pname, String pdob, 
+    Sex psex, String p_addr, String p_email, String ptelNum,String p_emgContact,
+    String p_occupation,String p2name, String p2dob, 
+    Sex p2sex, String p2_addr, String p2_email, String p2telNum,String p2_emgContact
+    ,String p2_occupation){
         super(name,dob,sex,addr,email,telNumber);
         this.d_name=d_name;
         this.dislikes=dislikes;
         this.gradebook=grades;
-        this.parent= parent1;
-        this.parent2= parent2;
-        this.emerContact1 = emerContact1;
-        this.emerContact2=emerContact2;
+        this.parent=new Parent(pname,pdob,psex,p_addr,p_email,ptelNum,p_emgContact,p_occupation);
+        this.parent2=new Parent(p2name,p2dob,p2sex,p2_addr,p2_email,p2telNum,p2_emgContact,p2_occupation);
     }
 
-    
-    public Student(String name, String dOB, Sex sex, String address, String dName, String dEmail, String dTel,
-            ArrayList<String> dislike, Grade grds, String pname, String pdob, Sex psex, String paddr, String pemail,
-            String ptelNum, String pemg, String poccupation, String p2name, String p2dob, Sex p2sex, String p2addr,
-            String p2email, String p2telNum, String p2emg, String p2occupation)
-            {super(name,dOB,sex,address,dEmail,dTel);
-    }
-
-
-
+    /**
+     * 
+     * @return Name of Parent
+     */
     public String getpName(){
         return parent.getName();
     }
 
+     /**
+     * 
+     * @return Date of birth of parent
+     */
     public String getpDOB(){
         return parent.getDOB();
     }
 
+    /**
+     * 
+     * @return Gender of parent
+     */
     public Sex getpSex(){
         return parent.getSex();
     }
 
+    /**
+     * 
+     * @return Address of parent
+     */
     public String getpAddr(){
         return parent.getAddr();
     }
 
+    /**
+     * 
+     * @param newaddress Address of a parent
+     */
     public void setpAddr(String newaddress){
         parent.setAddr(newaddress);
     }
 
+    /**
+     * 
+     * @return Email of a parent
+     */
     public String getpEmail(){
         return parent.getEmail();
     }
-
+    
+    /**
+     * 
+     * @param newemail Email of a parent
+     */
     public void setpEmail(String newemail){
         parent.setEmail(newemail);
     }
 
+     /**
+     * 
+     * @return Telephone number of a parent
+     */
     public String getpNumber(){
         return parent.getTelNum();
     }
 
+     /**
+     * 
+     * @param newtelNum Telephone number of a parent
+     */
     public void setpNumber(String newtelNum){
         parent.setTelNum(newtelNum);
     }
 
-    public ArrayList<String> getEmgContact1(){
-        return emerContact1;
+     /**
+     * 
+     * @return Emergency contact information
+     */
+    public String getpEmgContact(){
+        return parent.getEmgcon();
     }
 
-    public ArrayList<String> getEmgContact2(){
-        return emerContact2;
+     /**
+     * 
+     * @param newContact Telephone number of a emergency contact
+     */
+    public void setpEmgContact(String newContact){
+        parent.setEmgcon(newContact);
     }
-
-    public void setEmgContact(String name, String contact, String addr, String relation, String name2, String contact2, String addr2, String relation2){
-        emerContact1.add(name);
-        emerContact1.add(contact);
-        emerContact1.add(addr);
-        emerContact1.add(relation);
-        emerContact2.add(name2);
-        emerContact2.add(contact2);
-        emerContact2.add(addr2);
-        emerContact2.add(relation2);
-    }
-
-    public void setParentInfo(String name, String contact, String occp, String email, String name2, String contact2, String occp2, String email2){
-        parent = new Parent(name, "", Sex.FEMALE, "", email, contact, occp);
-        parent2 = new Parent(name, "",Sex.MALE, "",email2,contact2,occp2);   
-    }
-
+    
+    /**
+     * 
+     * @return The occupation of parent
+     */
     public String getpOccupation(){
         return parent.getOccupation();
     }
 
+    /**
+     * 
+     * @param addr Occupation of parent
+     */
     public void setpOccupation(String addr){
         parent.setOccupation(addr);
     }
 
+    /**
+     * 
+     * @return The name of a parent 
+     */
     public String getp2Name(){
         return parent2.getName();
     }
 
+     /**
+     * 
+     * @return The date of birthday of a parent 
+     */
     public String getp2DOB(){
         return parent2.getDOB();
     }
-
+    
+    /**
+     * 
+     * @return The Gender of a parent 
+     */
     public Sex getp2Sex(){
         return parent2.getSex();
     }
 
+    /**
+     * @return Address of a parent 
+     */
     public String getp2Addr(){
         return parent2.getAddr();
     }
 
+    /**
+     * @param newaddress Address of parent
+     */
     public void setp2Addr(String newaddress){
         parent2.setAddr(newaddress);
     }
 
+    /**
+     * 
+     * @return The email of a parent 
+     */
     public String getp2Email(){
         return parent2.getEmail();
     }
 
+    /**
+     * 
+     * @param newemail Email of parent 
+     */
     public void setp2Email(String newemail){
         parent2.setEmail(newemail);
     }
 
+    /**
+     * 
+     * @return The telephone number of parent
+     */
     public String getp2Number(){
         return parent2.getTelNum();
     }
 
+    /**
+     * 
+     * @param newtelNum Telephone number of parent
+     */
     public void setp2Number(String newtelNum){
         parent2.setTelNum(newtelNum);
     }
 
-    /*public String getp2EmgContact(){
+    /**
+     * 
+     * @return Information of emergency contact
+     */
+    public String getp2EmgContact(){
         return parent2.getEmgcon();
     }
 
+    
     public void setp2EmgContact(String newContact){
         parent2.setEmgcon(newContact);
-    }*/
+    }
 
     public String getp2Occupation(){
         return parent2.getOccupation();
@@ -164,6 +244,10 @@ public class Student extends Person {
         return d_name;
     }
 
+    /**
+     * 
+     * @return The dislikes of a student
+     */
     public String getDislikes(){
         st="DISLIKES:\n";
         for(String n: dislikes){
@@ -171,6 +255,11 @@ public class Student extends Person {
         }
         return st;
     }
+    
+    /**
+     * 
+     * @return The accademic record of a student
+     */
     public String getAcdRec(){
         String st;
         subjects=gradebook.getGrades().keySet();
@@ -184,26 +273,43 @@ public class Student extends Person {
         return st;
     }
 
+    /**
+     * 
+     * @param dislike A student's dislike
+     */
     public void setDislike(String dislike){
         this.dislikes.add(dislike);
     }
 
+    /**
+     * @return Student's name
+     */
     public String getName(){
         return name;
     }
 
+    /**
+     * @return Student's date of birth
+     */
     public String getDOB(){
         return dob;
     }
 
+    /**
+     * @return Student's gender
+     */
     public Sex getSex(){
         return sex;
     }
-
+    
+    /**
+     * @return Student's address
+     */ 
     public String getAddr(){
         return address;
     }
 
+    
     public void setAddr(String newAddr){
         this.address=newAddr;
     }
@@ -220,18 +326,15 @@ public class Student extends Person {
         return telNum;
     }
 
+    
     public void setTelNum(String Tel_num){
         this.telNum=Tel_num;
     }
 
+    /*
+    *@return Name of student's doctor
+    */
     public String getDoctorName(){
         return d_name;
     }
-
-    public String toString()
-    {
-        return(getName()+" "+getDOB()+" "+getSex()+" "+getAddr()+" "+getDName()+" "+getEmail()+" "+getTelNum()
-        +" "+getDislikes())+" "+getp2Name()+" "+getpName()+" "+getDName()+" "+getEmgContact1();
-    }
- 
 }
