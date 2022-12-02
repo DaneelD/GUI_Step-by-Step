@@ -56,7 +56,7 @@ public class GradeForm extends javax.swing.JFrame {
 
         jTable2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] { // The descriptions of the child who is being assessed
+            new Object [][] { // The Descriptions of the child who is being assessed
                 {"EMOTIONAL/SOCIAL DEVELOPMENT", null},
                 {"Curious about environment", null},
                 {"Separates from parent without difficulty", null},
