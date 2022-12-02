@@ -3,7 +3,7 @@ public class Parent extends Person {
     private String emgContact;
 
      /**
-     * This method is used to initialise an parent by invoking a parent class constructor in Person
+     * This method is used to initialise a parent by invoking a parent class constructor in Person
      * @param name Name of parent
      * @param dob Date of birth of paretn
      * @param sex Gender of parent
