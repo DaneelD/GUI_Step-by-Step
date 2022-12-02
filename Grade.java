@@ -1,7 +1,6 @@
 import java.util.*;
 public class Grade{
 
-    // variables
     private  HashMap<String, Integer> grades= new HashMap<>();
 
 

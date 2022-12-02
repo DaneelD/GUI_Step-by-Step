@@ -130,99 +130,48 @@ public class TestAdmin {
         GeneralEmployee employee1 = new GeneralEmployee("Craig Nelson", 
         "dd-mm-yyy", Sex.MALE, "Ocho Rios Street", "craig.nelson@outlook.com",
         "876 266 7862",EType.GENERAL);
-
-        String excelFilePath = "/Users/antoniacurtis/Desktop/StepData/Data.xlsx";
+       
+        String excelFilePath = "C:\\Users\\HP\\OneDrive\\Documents\\OneDrive\\Desktop\\Software Engineering\\Data.xlsx";
         if(new File(excelFilePath).exists()){
-            /*admin.enterGEmployee(employee1);
-            admin.enterAEmployee(admin);
+            //System.out.println(admin.enterGEmployee(employee1));
+            //System.out.println(admin.enterAEmployee(admin));
 
-            admin.assignStudent1(new Student(std2name, std2DOB, std2sex, 
+            /*System.out.println(admin.assignStudent1(new Student(std2name, std2DOB, std2sex, 
             std2address,std2dName , std2dEmail, std2dTel, std2dislike, 
             std2grds, std2pname, std2pdob, std2psex, std2paddr,
             std2pemail, std2ptelNum, std2pemg, std2poccupation, 
             std2p2name, std2p2dob, std2p2sex, std2p2addr, std2p2email, 
-            std2p2telNum, std2p2emg, std2p2occupation));
+            std2p2telNum, std2p2emg, std2p2occupation)));*/
 
-            admin.assignStudent2(new Student(name, DOB, sex, 
+            /*System.out.println(admin.assignStudent2(new Student(name, DOB, sex, 
             address,dName , dEmail, dTel, dislike, 
             grds, pname, pdob, psex, paddr,
             pemail, ptelNum, pemg, poccupation, 
             p2name, p2dob, p2sex, p2addr, p2email, 
-            p2telNum, p2emg, p2occupation));*/
+            p2telNum, p2emg, p2occupation)));*/
 
-            admin.regStudent(new Student(std2name, std2DOB, std2sex, 
+            /*System.out.println(admin.regStudent(new Student(std2name, std2DOB, std2sex, 
             std2address,std2dName , std2dEmail, std2dTel, std2dislike, 
             std2grds, std2pname, std2pdob, std2psex, std2paddr,
             std2pemail, std2ptelNum, std2pemg, std2poccupation, 
             std2p2name, std2p2dob, std2p2sex, std2p2addr, std2p2email, 
-            std2p2telNum, std2p2emg, std2p2occupation));
+            std2p2telNum, std2p2emg, std2p2occupation)));*/
 
-            admin.regStudent(new Student(name, DOB, sex, 
+           /* System.out.println(admin.regStudent(new Student(name, DOB, sex, 
         address,dName , dEmail, dTel, dislike, 
         grds, pname, pdob, psex, paddr,
         pemail, ptelNum, pemg, poccupation, 
         p2name, p2dob, p2sex, p2addr, p2email, 
-        p2telNum, p2emg, p2occupation));
+        p2telNum, p2emg, p2occupation)));*/
 
-        
+        System.out.println(admin.enterStdGrds("John Brown", std2grd4, std2grd1, std2grd2, std2grd3));
+        System.out.println(admin.enterStdGrds("Mary Smith", 99, 78, 89, 100));
 
         //System.out.println(admin.removeRecords());
 
         }
         else{
             admin.createExcel();
-        }
-        
-
-        
-        
-        
-
-        /*String excelFilePath = "C:\\Users\\HP\\OneDrive\\Documents\\OneDrive\\Desktop\\Software Engineering\\Data.xlsx";
-         
-        
-            FileInputStream inputStream = new FileInputStream(new File(excelFilePath));
-            Workbook workbook = WorkbookFactory.create(inputStream);
- 
-            Sheet sheet = workbook.getSheetAt(0);
- 
-            Object[][] bookData = {
-                    {"The Passionate Programmer", "Chad Fowler", 16},
-                    {"Software Craftmanship", "Pete McBreen", 26},
-                    {"The Art of Agile Development", "James Shore", 32},
-                    {"Continuous Delivery", "Jez Humble", 41},
-            };
- 
-            int rowCount = sheet.getLastRowNum();
- 
-            for (Object[] aBook : bookData) {
-                Row row = sheet.createRow(++rowCount);
- 
-                int columnCount = 0;
-                 
-                Cell cell = row.createCell(columnCount);
-                cell.setCellValue(rowCount);
-                 
-                for (Object field : aBook) {
-                    cell = row.createCell(++columnCount);
-                    if (field instanceof String) {
-                        cell.setCellValue((String) field);
-                    } else if (field instanceof Integer) {
-                        cell.setCellValue((Integer) field);
-                    }
-                }
- 
-            }
- 
-            inputStream.close();
- 
-            FileOutputStream outputStream = new FileOutputStream( excelFilePath);
-            workbook.write(outputStream);
-            workbook.close();
-            outputStream.close();*/
-
-
-        
-        
+        }   
     }
 }
