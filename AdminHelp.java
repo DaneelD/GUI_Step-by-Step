@@ -4,12 +4,14 @@ import org.apache.poi.EncryptedDocumentException;
 
 public interface AdminHelp {
     public String regStudent(Student student)throws IOException;
-    public void assignStudent(Student std);
-    public void modStdRec(Student std);
-    public void enterStdGrds(Student student);
-    public void removeRecords(Student lstOld_StdRecs);
-    public void enterAEmployeeInfo(Admin admin);
-    public void getAEmployeeInfo();
-    public void enterGEmployee(GeneralEmployee employee) throws EncryptedDocumentException, IOException;
-    //public String getGEmployeeInfo();
-}
+    public String assignStudent1(Student student) throws EncryptedDocumentException, IOException;
+    public String assignStudent2(Student student) throws EncryptedDocumentException, IOException;
+    public String assignStudent3(Student student) throws EncryptedDocumentException, IOException;
+    public String assignStudent4(Student student) throws EncryptedDocumentException, IOException;
+    public String assignStudent5(Student student) throws EncryptedDocumentException, IOException;
+    public String enterStdGrds(String stdname,
+    int grd1,int grd2, int grd3,int grd4) throws EncryptedDocumentException, IOException;
+    public String removeRecords() throws EncryptedDocumentException, IOException;
+    public String enterAEmployee(Admin admin) throws EncryptedDocumentException, IOException;
+    public String enterGEmployee(GeneralEmployee employee) throws EncryptedDocumentException, IOException;
+} 
