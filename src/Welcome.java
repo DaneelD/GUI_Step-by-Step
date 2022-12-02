@@ -47,7 +47,7 @@ public class Welcome extends JPanel
         cmdParent.setBackground(Color.CYAN);
         cmdAdmin.setBackground(Color.CYAN);
 
-        pnlDisplay.add(new JLabel("WELCOME TO STEP-BY-STEP SYSTEM"),BorderLayout.CENTER);
+        pnlDisplay.add(new JLabel("WELCOME TO THE STEP-BY-STEP SYSTEM"),BorderLayout.CENTER);
         pnlCommand1.add(new JLabel("Select User:"),BorderLayout.EAST);
         pnlCommand1.add(cmdParent,BorderLayout.CENTER );
         pnlCommand1.add(cmdAdmin,BorderLayout.WEST);
